@@ -21,7 +21,7 @@ stages:
     - deployment: DeploymentJob1
       pool:
         vmImage: $(vmImage)
-      environment: $(Environment)
+      environment: non-prod
       variables:
         - template: Variables/non-prod.yml
       strategy:
@@ -36,7 +36,7 @@ stages:
     - deployment: DeploymentJob2
       pool:
         vmImage: $(vmImage)
-      environment: $(Environment)
+      environment: prod
       variables:
         - template: Variables/prod.yml
       strategy:
